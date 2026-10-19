@@ -19,3 +19,10 @@ NeetCode 150 - Pattern Based Approach
           int balance = target - nums[i];
           targetMap.put(balance, i);
       }
+
+4) **Best Time to Buy and Sell Stock** -> We need to keep track of the minimum price to buy and check what would be the profit if we sell on each day (**profit = buying price - price on that day**). If it exceeds current profit, update the max profit.
+      if(prices[i] < buyPrice){
+          buyPrice = prices[i];
+      }else{
+          profit = Math.max(profit, prices[i] - buyPrice);
+      }
