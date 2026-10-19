@@ -26,3 +26,5 @@ NeetCode 150 - Pattern Based Approach
       }else{
           profit = Math.max(profit, prices[i] - buyPrice);
       }
+
+5) **Missing Number** -> Without sorting, the trick is to find the **actual sum and expected sum** while iterating. Then return the difference.
