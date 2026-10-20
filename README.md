@@ -28,3 +28,9 @@ NeetCode 150 - Pattern Based Approach
       }
 
 5) **Missing Number** -> Without sorting, the trick is to find the **actual sum and expected sum** while iterating. Then return the difference.
+6) Maximum Sub Array -> The key logic is that **whenever we add a negative number to the current sum it will reduce the total sum**. So only if the number is positive we carry forward it otherwise ignore. Needs to have two trackers one for the currentSum and other for the maxSum.
+
+            currentSum = Math.max(nums[i], currentSum + nums[i]);
+            maxSum = Math.max(currentSum, maxSum);
+
+currentSum checks whether adding the current value increases currentSum or not (either Start a new subarray from the current element → nums[i] or Extend the existing subarray → currentSum + nums[i]). If not, just start fresh from the current value. maxSum gets updated only when we get a value of currentSum greater than current maxSum.
