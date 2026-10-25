@@ -28,13 +28,14 @@ NeetCode 150 - Pattern Based Approach
             }
 
 5) **Missing Number** -> Without sorting, the trick is to find the **actual sum and expected sum** while iterating. Then return the difference.
-6) Maximum Sub Array -> The key logic is that **whenever we add a negative number to the current sum it will reduce the total sum**. So only if the number is positive we carry forward it otherwise ignore. Needs to have two trackers one for the currentSum and other for the maxSum.
+6) **Maximum Sub Array** -> The key logic is that **whenever we add a negative number to the current sum it will reduce the total sum**. So only if the number is positive we carry forward it otherwise ignore. Needs to have two trackers one for the currentSum and other for the maxSum.
 
             currentSum = Math.max(nums[i], currentSum + nums[i]);
             maxSum = Math.max(currentSum, maxSum);
 
 currentSum checks whether adding the current value increases currentSum or not (either Start a new subarray from the current element → nums[i] or Extend the existing subarray → currentSum + nums[i]). If not, just start fresh from the current value. maxSum gets updated only when we get a value of currentSum greater than current maxSum.
-7) Group Anagrams -> Key is to store the groups in a str -> list of strs. We need to sort each value first. For that convert the string to charArray and then use Arrays.sort(). Then we can use getOrDefault. If already sorted str is present, we would add the current string to the existing list. Else we create new empty arraylist and add.
+
+7) **Group Anagrams** -> Key is to store the groups in a str -> list of strs. We need to sort each value first. For that convert the string to charArray and then use Arrays.sort(). Then we can use getOrDefault. If already sorted str is present, we would add the current string to the existing list. Else we create new empty arraylist and add.
 
             for(String str : strs){
                   char[] charArr = str.toCharArray();
