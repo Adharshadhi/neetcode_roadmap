@@ -34,3 +34,13 @@ NeetCode 150 - Pattern Based Approach
             maxSum = Math.max(currentSum, maxSum);
 
 currentSum checks whether adding the current value increases currentSum or not (either Start a new subarray from the current element → nums[i] or Extend the existing subarray → currentSum + nums[i]). If not, just start fresh from the current value. maxSum gets updated only when we get a value of currentSum greater than current maxSum.
+7) Group Anagrams -> Key is to store the groups in a str -> list of strs. We need to sort each value first. For that convert the string to charArray and then use Arrays.sort(). Then we can use getOrDefault. If already sorted str is present, we would add the current string to the existing list. Else we create new empty arraylist and add.
+
+            for(String str : strs){
+                  char[] charArr = str.toCharArray();
+                  Arrays.sort(charArr);
+                  String sorted = new String(charArr);
+                  List<String> stsList = anagramMap.getOrDefault(sorted, new ArrayList<>());
+                  stsList.add(str);
+                  anagramMap.put(sorted, stsList);
+              }
