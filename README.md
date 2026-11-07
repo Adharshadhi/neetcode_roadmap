@@ -45,3 +45,7 @@ currentSum checks whether adding the current value increases currentSum or not (
                   stsList.add(str);
                   anagramMap.put(sorted, stsList);
               }
+
+8) Two Sum II (Sorted Array) -> We cannot use HashMap as space complexity should be O(1) (mandatory). Here the key is that input array is sorted. We can use **two pointer** (look for hint like sorted, find pair, triplets, compare elements in reverse order etc for applying two pointer). Since the array is sorted, we start from left and right where left would be the smallest and right would be the biggest. Now compare the sum of left and right to the target.
+
+**If (sum is less than target) that means we need a bigger number. So we move the left pointer to take the second number. If it is greater then we move the right pointer to left until we find the pair.**
